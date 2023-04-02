@@ -2,32 +2,25 @@
 {
     public class CustomerBag
     {
-        private int _numberPurchases = 0;
+        public int PurchasesNumer { get; private set; } = 0;
 
-        private Node _bag;
+        public Product[] Bag { get; private set; } = new Product[0];
+
         public decimal TotalPrice { get; private set; } = 0;
 
         public void AddProduct(Product product)
         {
-            if (_numberPurchases < 10)
-            {
-                if (_bag != null)
-                {
-                    var temp = _bag;
-                    _bag = new Node() { Product = product, Next = temp };
-                }
-                else
-                {
-                    _bag = new Node() { Product = product };
-                }
+            Product[] temp = new Product[Bag.Length + 1];
 
-                TotalPrice += product.Price;
-                _numberPurchases++;
-            }
-            else
+            for (int i = 0; i < Bag.Length; i++)
             {
-                Console.WriteLine("Maximum items added to bag!");
+                temp[i] = Bag[i];
             }
+
+            temp[temp.Length - 1] = product;
+            TotalPrice += product.Price;
+            PurchasesNumer++;
+            Bag = temp;
         }
     }
 }
