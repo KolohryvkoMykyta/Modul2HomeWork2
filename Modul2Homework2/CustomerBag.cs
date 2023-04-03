@@ -22,5 +22,12 @@
             PurchasesNumer++;
             Bag = temp;
         }
+
+        public void CleanBag()
+        {
+            Bag = new Product[0];
+            PurchasesNumer = 0;
+            TotalPrice = 0;
+        }
     }
 }

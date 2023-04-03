@@ -7,10 +7,5 @@
         public CustomerBag Bag { get; private set; } = new CustomerBag();
 
         public decimal Money { get; init; }
-
-        public void CleanBag()
-        {
-            Bag = new CustomerBag();
-        }
     }
 }

@@ -68,7 +68,7 @@
                 return false;
             }
 
-            customer.CleanBag();
+            customer.Bag.CleanBag();
 
             return true;
         }
@@ -89,7 +89,7 @@
 
             if (customerChoice == '3')
             {
-                customer.CleanBag();
+                customer.Bag.CleanBag();
                 return true;
             }
 
