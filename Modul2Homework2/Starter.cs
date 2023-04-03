@@ -5,17 +5,17 @@
         public static void Run()
         {
             bool repeatFlag = true;
-            var customer = Actions.GetCustomer();
+            var customer = Presentation.GetCustomer();
 
             while (repeatFlag)
             {
                 Product[] selectedProducts = ProductsList.DisplayProduct();
-                Actions.MakePurchase(customer.Bag, selectedProducts);
+                PurchaseProcessor.MakePurchase(customer.Bag, selectedProducts);
 
                 repeatFlag = AskCustomerToProceed(customer);
             }
 
-            var order = Actions.ProcessingOrder(customer);
+            var order = OrderProcessor.ProcessingOrder(customer);
 
             if (order != null)
             {
